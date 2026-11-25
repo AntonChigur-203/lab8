@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>лб8</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main class="wrapper">
+        <section class="intro-box">
+            <span class="badge">Веб-разработка • ЛР №8</span>
+            <h1>Центр обратной связи</h1>
+            <p>
+                Есть вопрос или предложение? Нажмите на кнопку ниже, чтобы
+                открыть форму и отправить сообщение.
+            </p>
+            <button type="button" id="openPopupBtn" class="trigger-btn">
+                Открыть форму
+            </button>
+        </section>
+    </main>
+
+    <div id="contactPopup" class="popup-backdrop" aria-hidden="true">
+        <div class="popup-card" role="dialog" aria-labelledby="popupHeading">
+            <div class="popup-top">
+                <h2 id="popupHeading">Обратная связь</h2>
+                <button type="button"
+                        id="closePopupBtn"
+                        class="popup-close"
+                        aria-label="Закрыть форму">
+                    &times;
+                </button>
+            </div>
+
+            <form id="contactForm" class="contact-form">
+                <div class="field-block">
+                    <label for="userName">ФИО *</label>
+                    <input type="text"
+                           id="userName"
+                           name="name"
+                           placeholder="Петров Пётр Петрович"
+                           required>
+                </div>
+
+                <div class="field-grid">
+                    <div class="field-block">
+                        <label for="userEmail">Email *</label>
+                        <input type="email"
+                               id="userEmail"
+                               name="email"
+                               placeholder="name@example.com"
+                               required>
+                    </div>
+
+                    <div class="field-block">
+                        <label for="userPhone">Телефон *</label>
+                        <input type="tel"
+                               id="userPhone"
+                               name="phone"
+                               placeholder="+7 (900) 123-45-67"
+                               required>
+                    </div>
+                </div>
+
+                <div class="field-block">
+                    <label for="userCompany">Организация</label>
+                    <input type="text"
+                           id="userCompany"
+                           name="company"
+                           placeholder="Университет или компания">
+                </div>
+
+                <div class="field-block">
+                    <label for="userMessage">Сообщение *</label>
+                    <textarea id="userMessage"
+                              name="message"
+                              rows="2"
+                              placeholder="Текст вашего обращения..."
+                              required></textarea>
+                </div>
+
+                <div class="agree-row">
+                    <input type="checkbox"
+                           id="privacyAgree"
+                           name="privacy"
+                           required>
+                    <label for="privacyAgree">
+                        Согласен(а) с политикой обработки персональных данных *
+                    </label>
+                </div>
+
+                <div id="responseNotice" class="notice-box" role="status"></div>
+
+                <button type="submit" id="sendFormBtn" class="submit-btn">
+                    Отправить
+                </button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
